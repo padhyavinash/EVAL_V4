@@ -1,0 +1,36 @@
+<br/><br/><br/>
+<div class="container">
+
+  <div class="row" style="margin-left: 20%;">
+      <div class="card border-primary mb-3" >
+          <div class="card-header" >User Profile Details</div>
+          <div class="card-body">            
+            <p class="card-text"><label>Full name</label>:  {{ details?.name }} </p>
+            <p class="card-text"><label>Email</label>    :    {{ details?.email }}</p>
+            <p class="card-text"><label>Type of User</label>    :    {{ details?.type }}</p>
+             <div *ngIf="details?.type=='Candidate'"> 
+              <p class="card-text"><label>Experience</label>    :    {{ details?.exp }}</p>
+            </div> 
+          </div>
+        </div>
+  
+     <!-- <div class="col-md-6">
+
+      <h1 class="form-signin-heading">Your profile</h1>
+
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Full name</label>
+          <p class="form-control-static">{{ details?.name }}</p>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Email</label>
+          <p class="form-control-static">{{ details?.email }}</p>
+        </div>
+      </div>
+
+    </div> -->
+
+  </div>
+</div>
+

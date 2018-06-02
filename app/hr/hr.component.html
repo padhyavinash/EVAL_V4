@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+      
+       <div class="col-md-6">
+  
+        <h1 class="form-signin-heading">{{ details?.type }} page</h1>
+        <h2 class="form-signin-heading">Welcome {{ details?.name }}</h2>
+  
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Full name</label>
+            <p class="form-control-static">{{ details?.name }}</p>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Email</label>
+            <p class="form-control-static">{{ details?.email }}</p>
+          </div>
+        </div>
+        <a routerLink="/hr_register">Create Candidate</a>
+        <div class="form-group voffset row">
+        
+         <!--  <select class="form-control dropdown" >
+            <option selected="">Select Candidate</option>
+            <option *ngFor="let candidate of resData" (change)="onNameClick()"> {{candidate.name}}</option>
+        </select>
+         -->
+     <!--    <select (change)="onNameClick(candidate)">
+            <option *ngFor="let candidate of resData" [value]="candidate">{{candidate.name}}</option>
+        <select> -->
+            <select [ngModel]="candidateData" (ngModelChange)="onNameClick($event)" class="form-control dropdown">                
+                <option [value]="candidate.name" *ngFor="let candidate of resData">{{candidate.name}}</option>
+            </select>
+ 
+            <div>
+              Show results: 
+
+              <!--<div *ngIf="userResult;then content">-->
+                  <div *ngIf="userResult">
+              <!--<ng-template #content>-->
+                  <label>Name :</label>  {{userResult.name}}<br/>
+              {{userResult.email}}
+
+              {{userResult.category1}}
+
+
+                {{userResult.category2}}
+
+                  {{userResult.category3}}
+
+                    {{userResult.finalResult}}
+
+                      {{userResult.tech}}
+                      <!-- <div *ngIf="userResult.name"> -->
+                          <div id="{{elementId1}}" style="width: 800px; height: 400px;"></div>
+                          <!-- <app-result></app-result> -->
+                      <!-- </div> -->
+                    <!--</ng-template>-->
+                    </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </div>
